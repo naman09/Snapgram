@@ -19,6 +19,6 @@ keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keyst
 ```
 server.port= 443
 server.ssl.key-store= classpath:keystore/keystore.p12
-server.ssl.key-store-password= GoodCookie
+server.ssl.key-store-password= <PASSWORD-GIVEN-DURING-CERT_GEN>
 server.ssl.keyStoreType= PKCS12
 ```
