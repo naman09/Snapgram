@@ -1,2 +1,0 @@
-# Snapgram
-Snapgram clone

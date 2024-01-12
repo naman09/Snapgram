@@ -43,3 +43,5 @@ public class SnapgramApplication {
 //create DTO layer
 
 //ResponseEntityExceptionHandler
+
+//GoodCookie
