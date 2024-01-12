@@ -10,6 +10,15 @@ Snapgram clone
 - run using IDE
 
 ## Setup HTTPS
-### Generate SSL certificate
-`keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12  -validity 3650`
-
+-  Generate SSL certificate
+```
+keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12  -validity 3650
+```
+- move keystore.p12 in `resources/keystore`
+- Update application.properties
+```
+server.port= 443
+server.ssl.key-store= classpath:keystore/keystore.p12
+server.ssl.key-store-password= GoodCookie
+server.ssl.keyStoreType= PKCS12
+```
