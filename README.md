@@ -22,3 +22,8 @@ server.ssl.key-store= classpath:keystore/keystore.p12
 server.ssl.key-store-password= <PASSWORD-GIVEN-DURING-CERT_GEN>
 server.ssl.keyStoreType= PKCS12
 ```
+
+## TODO
+- [ ] Write tests - unit tests, integration tests
+- [ ] How to configure multiple env - Dev, QA, Stage, Prod
+- [ ] How to configure secrets for DB 
