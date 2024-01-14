@@ -28,3 +28,4 @@ server.ssl.keyStoreType= PKCS12
 - [ ] How to configure multiple env - Dev, QA, Stage, Prod
 - [ ] How to configure secrets for DB
 - [ ] Error handling using [ResponseStatusException](https://www.baeldung.com/spring-response-status-exception)
+- [ ] Add logs before and after method exec using Logging Aspect (AOP)
