@@ -29,3 +29,30 @@ server.ssl.keyStoreType= PKCS12
 - [ ] How to configure secrets for DB
 - [ ] Error handling using [ResponseStatusException](https://www.baeldung.com/spring-response-status-exception)
 - [ ] Add logs before and after method exec using Logging Aspect (AOP)
+- [ ] Add global exception handler using Controller Advice
+```java
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(DatabaseOperationException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ResponseEntity<String> handleDatabaseOperationException(DatabaseOperationException ex) {
+        // Log the exception or perform other actions if needed
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
+    }
+}
+```
+### Controller Advice vs RespnseStatusException
+```
+1. If you want to provide a unified and global way of exception handling make use of ControllerAdvice.
+It also eliminates code duplication which might be caused by ResponseStatusException.
+
+2. In order to throw different error code and responses for the same exception, don't want to create
+custom exception classes and to avoid tight coupling make use of ResponseStatusException.
+```
