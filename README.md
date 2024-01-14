@@ -26,4 +26,5 @@ server.ssl.keyStoreType= PKCS12
 ## TODO
 - [ ] Write tests - unit tests, integration tests
 - [ ] How to configure multiple env - Dev, QA, Stage, Prod
-- [ ] How to configure secrets for DB 
+- [ ] How to configure secrets for DB
+- [ ] Error handling using [ResponseStatusException](https://www.baeldung.com/spring-response-status-exception)
