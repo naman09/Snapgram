@@ -9,6 +9,10 @@ Snapgram clone
 - ./mvnw clean build
 - run using IDE
 
+## Data model
+[Data model](https://app.diagrams.net/#G1yg6SCO9BjNiieXteEHKQUAWojveNmihG)
+![Snapgram data model](backend/database/Snapgram-data-model.drawio.png)
+
 ## Setup HTTPS
 -  Generate SSL certificate
 ```
