@@ -1,10 +1,8 @@
 package com.example.Snapgram.aspects;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -17,11 +15,11 @@ public class LoggerAspect {
     public Object logBeforeMethodExecution(ProceedingJoinPoint joinPoint) throws Throwable{
         String methodName = joinPoint.getSignature().getName();
         String className = joinPoint.getTarget().getClass().getSimpleName();
-        logger.info("Calling method " + methodName + " in class " + className);
+        logger.info("Calling method {} in class {}", methodName, className);
 
         Object result = joinPoint.proceed();
 
-        logger.info("Exiting method " + methodName + " in class " + className);
+        logger.info("Exiting method {} in class {}", methodName, className);
         return result;
     }
 }
