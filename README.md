@@ -3,6 +3,12 @@ Snapgram clone
 
 [![Build and Test App](https://github.com/naman09/Snapgram/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/naman09/Snapgram/actions/workflows/github-actions-demo.yml)
 
+# Snapgram APIs
+- Craete user account w/ basic info
+- Create post
+- get posts + like data + if post is liked by logged in user
+- Search on captions
+
 ## Run local frontend
 - npm install
 - npm start
