@@ -68,3 +68,5 @@ It also eliminates code duplication which might be caused by ResponseStatusExcep
 2. In order to throw different error code and responses for the same exception, don't want to create
 custom exception classes and to avoid tight coupling make use of ResponseStatusException.
 ```
+
+[Reference:](https://www.youtube.com/watch?v=_W3R2VwRyF4&list=WL&index=20&ab_channel=JavaScriptMastery)
