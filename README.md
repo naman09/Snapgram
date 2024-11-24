@@ -1,7 +1,7 @@
+[![Build and Test App](https://github.com/naman09/Snapgram/actions/workflows/ci.yml/badge.svg)](https://github.com/naman09/Snapgram/actions/workflows/ci.yml)
+
 # Snapgram
 Snapgram clone
-
-[![Build and Test App](https://github.com/naman09/Snapgram/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/naman09/Snapgram/actions/workflows/github-actions-demo.yml)
 
 # Snapgram APIs
 - Create user account w/ basic info
