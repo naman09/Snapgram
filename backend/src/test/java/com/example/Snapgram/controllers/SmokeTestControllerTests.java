@@ -16,7 +16,7 @@ class SmokeTestControllerTests {
 
     @Test
     void testHelloEndpoint() throws Exception {
-        mockMvc.perform(get("/api/v1/hello"))
+        mockMvc.perform(get("/hello"))
                .andExpect(status().isOk())
                .andExpect(content().string("Hello World!"));
     }

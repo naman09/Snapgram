@@ -11,7 +11,7 @@ import com.example.Snapgram.models.Post;
 import com.example.Snapgram.services.PostService;
 
 @RestController
-@RequestMapping("api/v1/post")
+@RequestMapping("/post")
 public class PostController {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 

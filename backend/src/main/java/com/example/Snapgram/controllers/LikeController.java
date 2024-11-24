@@ -11,7 +11,7 @@ import com.example.Snapgram.models.Like;
 import com.example.Snapgram.services.LikeService;
 
 @RestController
-@RequestMapping("api/v1/like")
+@RequestMapping("/like")
 public class LikeController {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
