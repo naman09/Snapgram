@@ -5,12 +5,13 @@ import Home from './root/Home';
 import RootLayout from './root/RootLayout';
 import AuthLayout from './auth/AuthLayout';
 import SignupForm from './auth/forms/SignupForm';
-
+import Posts from './root/Posts';
+// className="flex h-screen"
 const App = () => {
   return (
-    <main className="flex h-screen">
+    <main>
       <Routes>
-        <Route path="/test" element = {<Home/>}/>
+        <Route path="/home" element = {<Home/>}/>
         
         {/* public routes */}
         <Route element = {<AuthLayout/>} >
@@ -20,7 +21,7 @@ const App = () => {
 
         {/* private routes */}
         <Route element = {<RootLayout/>}>
-          <Route index element = {<Home/>}/>
+          <Route index element = {<Posts/>}/>
         </Route>
       </Routes>
     </main>
