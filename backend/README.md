@@ -47,7 +47,10 @@ server.ssl.keyStoreType= PKCS12
 - [x] Setup DB
 - [x] setup 1 DAO layer
 - [x] auto increment in create user
-- [ ] setup LOKI
+- [x] setup LOKI
+- [x] setup grafana
+- [x] push a test log file to loki
+- [ ] setup logging to log into file
 - [ ] setup Prometheus
 - [ ] How to configure secrets for DB
 - [ ] Write tests - unit tests, integration tests
@@ -83,4 +86,21 @@ It also eliminates code duplication which might be caused by ResponseStatusExcep
 custom exception classes and to avoid tight coupling make use of ResponseStatusException.
 ```
 
+### Loki
+```bash
+docker network create logging-network
+
+# Run loki http://localhost:3100/metrics
+docker run --name loki -d -v C:\dev\Snapgram\backend\loki:/mnt/config -p 3100:3100 --network logging-network grafana/loki:3.2.1 -config.file=/mnt/config/loki-config.yml 
+```
+
+```bash
+# Run grafana alloy http://localhost:12345/ui
+docker run --name grafana-alloy -d -v C:\dev\Snapgram\backend\grafana-alloy\config.alloy:/etc/alloy/config.alloy -v C:\dev\Snapgram\backend\loki\log:/var/log/snapgram -p 12345:12345 --network logging-network grafana/alloy:latest run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
+```
+
+```bash 
+# Run grafana http://localhost:3000/
+docker run -d -p 3000:3000  --network logging-network --name=grafana grafana/grafana-oss
+```
 [Reference:](https://www.youtube.com/watch?v=_W3R2VwRyF4&list=WL&index=20&ab_channel=JavaScriptMastery)
